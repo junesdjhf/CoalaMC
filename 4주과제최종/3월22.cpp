@@ -7,16 +7,18 @@
 
 int main()
 {
-
+	
 	BlockID 돌 = createBlock(BLOCK_STONE);
 	double pi = 3.14159265358979323846;
 	int px, py, pz;
+
+	getPlayerLocation(&px, &py, &pz);
 	double dir = getPlayerDirection();
 	double radian = dir * pi / 180.;
 	int dx = -150 * sin(radian);
 	int dz = 150 * cos(radian);
-	getPlayerLocation(&px, &py, &pz);
-
+	px += dx;
+	pz += dz;
 	//printf("x,y,z 좌표를 입력하시요  (예:100,4,200)  ");
 	//scanf_s("%d, %d, %d" ,&px, &py, &pz);
 
@@ -184,6 +186,4 @@ int main()
 
 
 	return 0;
-
 }
-
